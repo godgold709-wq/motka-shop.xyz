@@ -35,34 +35,34 @@
         { id: 3, name: "ขนาดสินค้าแนะนำ 380x380 3", price: 0, stock: 10, img: "https://via.placeholder.com/380x380?text=380x380", badge: "สินค้าขายดี" },
       ]);
       return (
-        <div class="min-h-screen p-4 max-w-6xl mx-auto">
-          <header class="flex justify-between items-center py-4 border-b border-slate-700 mb-6">
-            <h1 class="text-2xl font-bold text-cyan-400">Notza.shop.xyz</h1>
-            <div class="flex items-center gap-4">
-              <span class="bg-slate-800 px-3 py-1 rounded-full text-yellow-400 font-semibold">💰 ฿{balance}</span>
-              <button class="rainbow-button px-4 py-2 rounded-lg font-bold shadow-lg">เข้าสู่ระบบ / สมัครสมาชิก</button>
+        <div className="min-h-screen p-4 max-w-6xl mx-auto">
+          <header className="flex justify-between items-center py-4 border-b border-slate-700 mb-6">
+            <h1 className="text-2xl font-bold text-cyan-400">Notza.shop.xyz</h1>
+            <div className="flex items-center gap-4">
+              <span className="bg-slate-800 px-3 py-1 rounded-full text-yellow-400 font-semibold">💰 ฿{balance}</span>
+              <button className="rainbow-button px-4 py-2 rounded-lg font-bold shadow-lg">เข้าสู่ระบบ / สมัครสมาชิก</button>
             </div>
           </header>
-          <div class="mb-8">
-            <h2 class="text-xl font-bold mb-4">⭐ หมวดหมู่แนะนำ</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <div class="border-2 border-cyan-500/50 bg-gradient-to-r from-purple-900 to-indigo-900 h-36 rounded-2xl flex items-center justify-center font-bold text-2xl text-cyan-200 shadow-lg">หมวดหมู่ 960x300</div>
-              <div class="border-2 border-purple-500/50 bg-gradient-to-r from-indigo-900 to-purple-900 h-36 rounded-2xl flex items-center justify-center font-bold text-2xl text-purple-200 shadow-lg">หมวดหมู่ 960x300</div>
+          <div className="mb-8">
+            <h2 className="text-xl font-bold mb-4">⭐ หมวดหมู่แนะนำ</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div className="border-2 border-cyan-500/50 bg-gradient-to-r from-purple-900 to-indigo-900 h-36 rounded-2xl flex items-center justify-center font-bold text-2xl text-cyan-200 shadow-lg">หมวดหมู่ 960x300</div>
+              <div className="border-2 border-purple-500/50 bg-gradient-to-r from-indigo-900 to-purple-900 h-36 rounded-2xl flex items-center justify-center font-bold text-2xl text-purple-200 shadow-lg">หมวดหมู่ 960x300</div>
             </div>
           </div>
           <div>
-            <h2 class="text-xl font-bold mb-4">⭐ สินค้าแนะนำ</h2>
-            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
+            <h2 className="text-xl font-bold mb-4">⭐ สินค้าแนะนำ</h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
               {products.map((p) => (
-                <div key={p.id} class="bg-slate-800 rounded-xl p-3 border border-slate-700 relative flex flex-col justify-between">
-                  {p.badge && <span class={`absolute top-5 right-5 text-xs font-bold px-2 py-1 rounded ${p.badge === 'ยอดฮิต' ? 'bg-red-500' : 'bg-purple-600'}`}>{p.badge}</span>}
+                <div key={p.id} className="bg-slate-800 rounded-xl p-3 border border-slate-700 relative flex flex-col justify-between">
+                  {p.badge && <span className={`absolute top-5 right-5 text-xs font-bold px-2 py-1 rounded ${p.badge === 'ยอดฮิต' ? 'bg-red-500' : 'bg-purple-600'}`}>{p.badge}</span>}
                   <div>
-                    <img src={p.img} alt={p.name} class={`w-full aspect-square object-cover rounded-lg mb-3 ${p.stock === 0 ? 'grayscale opacity-60' : ''}`} />
-                    <h3 class="font-bold text-sm mb-1">{p.name}</h3>
-                    <div class="text-cyan-400 font-bold mb-1">{p.price}฿</div>
-                    <div class="text-xs text-slate-400 mb-3">เหลือ {p.stock} ชิ้น</div>
+                    <img src={p.img} alt={p.name} className={`w-full aspect-square object-cover rounded-lg mb-3 ${p.stock === 0 ? 'grayscale opacity-60' : ''}`} />
+                    <h3 className="font-bold text-sm mb-1">{p.name}</h3>
+                    <div className="text-cyan-400 font-bold mb-1">{p.price}฿</div>
+                    <div className="text-xs text-slate-400 mb-3">เหลือ {p.stock} ชิ้น</div>
                   </div>
-                  <button disabled={p.stock === 0} class={`w-full py-2 rounded-lg font-bold text-sm ${p.stock > 0 ? 'bg-emerald-500 text-white' : 'bg-slate-700 text-slate-500 cursor-not-allowed'}`}>
+                  <button disabled={p.stock === 0} className={`w-full py-2 rounded-lg font-bold text-sm ${p.stock > 0 ? 'bg-emerald-500 text-white' : 'bg-slate-700 text-slate-500 cursor-not-allowed'}`}>
                     {p.stock > 0 ? '🛒 ซื้อสินค้า' : '📦 สินค้าหมด'}
                   </button>
                 </div>
